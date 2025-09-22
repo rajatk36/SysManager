@@ -1,0 +1,15 @@
+.customer-form{
+    display: flex;
+    justify-content: center;
+
+}
+
+/* Ensure customer card width matches bill card */
+.customer-form .card{
+    width: 100%;
+    max-width: 720px;
+    margin: 16px;
+}
+
+
+

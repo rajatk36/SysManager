@@ -1,0 +1,468 @@
+.bill-page {
+    padding: 20px;
+}
+
+/* Bill Form Specific Styles */
+.bill-form .card-body {
+    padding: 1.25rem;
+}
+
+.bill-form .form-label {
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.bill-form .form-control,
+.bill-form .form-select {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.bill-form .form-check {
+    margin-bottom: 0;
+}
+
+.bill-form .form-check-label {
+    font-size: 0.85rem;
+    margin-left: 0.25rem;
+}
+
+.bill-form .btn {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    font-weight: 500;
+}
+
+/* Fix dropdown overflow issues */
+.bill-form .form-select {
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.bill-form .form-select option {
+    max-width: 100%;
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Additional dropdown container constraints */
+.bill-form .col-md-8 {
+    position: relative;
+    overflow: hidden;
+}
+
+.bill-form .form-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Force dropdown to respect container boundaries */
+.bill-form .form-select {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Ensure dropdown options don't extend beyond container */
+.bill-form .form-select option {
+    max-width: calc(100% - 1rem) !important;
+    word-break: break-word;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Make bill form and bill list same height */
+.bill-page .row {
+    display: flex;
+    align-items: stretch;
+}
+
+.bill-page .col-md-6 {
+    display: flex;
+    flex-direction: column;
+}
+
+.bill-form{
+    display: flex;
+    justify-content: center;
+}
+
+/* Make bill card width match customer card and equal height */
+.bill-form .card{
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent card content from overflowing */
+    position: relative;
+}
+
+.bill-form .card-body {
+    overflow: hidden; /* Prevent form content from overflowing */
+    position: relative;
+}
+
+/* Ensure dropdown doesn't overflow card boundaries */
+.bill-form .card-body * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.bill-list .card {
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bill-list .table {
+    margin-bottom: 0;
+}
+
+/* Make card body flex to fill available space */
+.bill-form .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.bill-list .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make table container fill available space */
+.bill-list .table-responsive {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.bill-list .badge {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+}
+
+/* Status dropdown styling */
+.bill-list .form-select-sm {
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+.bill-list .form-select-sm:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    border-color: #80bdff;
+}
+
+/* Status-specific border colors */
+.bill-list .form-select-sm.border-danger {
+    border-color: #dc3545;
+}
+
+.bill-list .form-select-sm.border-success {
+    border-color: #28a745;
+}
+
+.bill-list .form-select-sm.border-warning {
+    border-color: #ffc107;
+}
+
+.bill-list .form-select-sm.border-secondary {
+    border-color: #6c757d;
+}
+
+/* Action buttons */
+.bill-list .btn-group .btn {
+    margin: 0 2px;
+}
+
+/* Responsive design */
+
+/* Large devices (992px and up) */
+@media (max-width: 1199.98px) {
+    .bill-page {
+        padding: 15px;
+    }
+}
+
+/* Medium devices (768px and up) - Keep side by side until 770px */
+@media (max-width: 991.98px) and (min-width: 770px) {
+    .bill-page {
+        padding: 12px;
+    }
+    
+    .bill-list .form-select-sm {
+        min-width: 80px;
+        font-size: 0.7rem;
+    }
+    
+    /* Fix dropdown overflow on medium screens */
+    .bill-form .form-select {
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .bill-form .form-select option {
+        max-width: 100%;
+        word-break: break-word;
+        white-space: normal;
+        padding: 0.4rem 0.5rem;
+    }
+}
+
+/* Small devices (770px and below) - Stack vertically */
+@media (max-width: 769.98px) {
+    .bill-page {
+        padding: 10px;
+    }
+    
+    .bill-page .row {
+        flex-direction: column;
+    }
+    
+    .bill-page .col-md-6 {
+        margin-bottom: 20px;
+    }
+    
+    .bill-list .form-select-sm {
+        min-width: 80px;
+        font-size: 0.7rem;
+    }
+    
+    /* Fix dropdown overflow on smaller screens */
+    .bill-form .form-select {
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .bill-form .form-select option {
+        max-width: calc(100vw - 4rem) !important; /* Account for page padding */
+        word-break: break-word;
+        white-space: normal;
+        padding: 0.4rem 0.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    /* Additional constraints for mobile dropdown */
+    .bill-form .card {
+        overflow: visible; /* Allow dropdown to show but constrain it */
+    }
+    
+    .bill-form .card-body {
+        overflow: visible; /* Allow dropdown to show but constrain it */
+    }
+    
+    .bill-form .col-md-8 {
+        overflow: visible; /* Allow dropdown to show but constrain it */
+        position: relative;
+    }
+    
+    /* Force dropdown to stay within viewport */
+    .bill-form .form-select {
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative;
+    }
+}
+
+/* Small devices (576px and up) */
+@media (max-width: 767.98px) {
+    .bill-page {
+        padding: 8px;
+    }
+    
+    .bill-page .col-md-6 {
+        margin-bottom: 15px;
+    }
+    
+    .bill-form .card,
+    .bill-list .card {
+        margin-bottom: 15px;
+    }
+    
+    .bill-list .form-select-sm {
+        min-width: 70px;
+        font-size: 0.65rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .bill-list .badge {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .bill-list .btn-group .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+        margin: 0 1px;
+    }
+    
+    .bill-list .table {
+        font-size: 0.8rem;
+    }
+    
+    .bill-list .table th,
+    .bill-list .table td {
+        padding: 0.5rem 0.25rem;
+    }
+}
+
+/* Extra small devices (less than 576px) */
+@media (max-width: 575.98px) {
+    .bill-page {
+        padding: 5px;
+    }
+    
+    .bill-page .row {
+        flex-direction: column;
+    }
+    
+    .bill-page .col-md-6 {
+        margin-bottom: 10px;
+    }
+    
+    .bill-form .card,
+    .bill-list .card {
+        margin-bottom: 10px;
+    }
+    
+    .bill-form .card-header,
+    .bill-list .card-header {
+        padding: 0.75rem;
+    }
+    
+    .bill-form .card-body,
+    .bill-list .card-body {
+        padding: 0.75rem;
+    }
+    
+    .bill-list .form-select-sm {
+        min-width: 60px;
+        font-size: 0.6rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .bill-list .badge {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .bill-list .btn-group .btn {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.65rem;
+        margin: 0 1px;
+    }
+    
+    .bill-list .table {
+        font-size: 0.75rem;
+    }
+    
+    .bill-list .table th,
+    .bill-list .table td {
+        padding: 0.4rem 0.2rem;
+    }
+    
+    .bill-list .table th:first-child,
+    .bill-list .table td:first-child {
+        padding-left: 0.5rem;
+    }
+    
+    .bill-list .table th:last-child,
+    .bill-list .table td:last-child {
+        padding-right: 0.5rem;
+    }
+}
+
+/* Very small devices (less than 400px) */
+@media (max-width: 399.98px) {
+    .bill-page {
+        padding: 3px;
+    }
+    
+    .bill-form .card-header,
+    .bill-list .card-header {
+        padding: 0.5rem;
+    }
+    
+    .bill-form .card-body,
+    .bill-list .card-body {
+        padding: 0.5rem;
+    }
+    
+    .bill-list .form-select-sm {
+        min-width: 50px;
+        font-size: 0.55rem;
+        padding: 0.15rem 0.3rem;
+    }
+    
+    .bill-list .badge {
+        font-size: 0.6rem;
+        padding: 0.15rem 0.3rem;
+    }
+    
+    .bill-list .btn-group .btn {
+        padding: 0.15rem 0.3rem;
+        font-size: 0.6rem;
+    }
+    
+    .bill-list .table {
+        font-size: 0.7rem;
+    }
+    
+    .bill-list .table th,
+    .bill-list .table td {
+        padding: 0.3rem 0.15rem;
+    }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 769.98px) and (orientation: landscape) {
+    .bill-page {
+        padding: 8px;
+    }
+    
+    .bill-page .col-md-6 {
+        margin-bottom: 12px;
+    }
+    
+    .bill-form .card,
+    .bill-list .card {
+        margin-bottom: 12px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .bill-page {
+        padding: 0 !important;
+    }
+    
+    .bill-form .card,
+    .bill-list .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        break-inside: avoid;
+    }
+    
+    .bill-list .btn-group {
+        display: none !important;
+    }
+}

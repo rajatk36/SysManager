@@ -1,0 +1,29 @@
+.panel{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+.left-nav{
+  font-weight: bold;
+  border-radius: 0px; /* rounded button */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-start ;
+}
+
+.left-nav:hover {
+  background-color: rgb(32, 32, 32); /* hover effect */
+  color:rgb(255, 255, 255);
+}
+
+.nav{
+    padding-top: 5px;
+    padding-left: 2rem;
+    padding-right: 8px;
+}
+
+
+ 

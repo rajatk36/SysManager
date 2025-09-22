@@ -1,0 +1,42 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.menu-icon{
+    font-size: 16px !important;
+    margin-right: 8px;
+}
+
+/* Ensure sidebar is completely hidden */
+.sidebar, .panel {
+    display: none !important;
+}
+
+/* App layout without sidebar */
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app .navbar {
+    flex-shrink: 0;
+}
+
+.app .main-content {
+    flex: 1;
+    padding: 0;
+}
