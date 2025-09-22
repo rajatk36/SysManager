@@ -33,15 +33,16 @@ export function Customerform({ onAddCustomer , userId}) {
     }
 
     try {
+      const baseUrl = process.env.REACT_APP_SERVER_URL;
       const requestBody = {
         userId, 
         ...formData
       };
       
-      console.log("🚀 Sending request to:", "${process.env.REACT_APP_SERVER_URL}/api/customers");
+      console.log("🚀 Sending request to:", `${baseUrl}/api/customers`);
       console.log("📦 Request body:", requestBody);
       
-      const response = await fetch("${process.env.REACT_APP_SERVER_URL}/api/customers", {
+      const response = await fetch(`${baseUrl}/api/customers`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),
