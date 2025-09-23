@@ -82,7 +82,8 @@ function CustomerList({ customers = [], onDeleteCustomer, loading }: CustomerLis
   };
 
   return (
-    <div className="card shadow-sm w-100 mt-4">
+   <div className="customer-list">
+      <div className="card shadow-sm w-100 mt-4">
       <div className="card-header d-flex justify-content-between align-items-center">
         <div>
           <h5 className="mb-0 d-flex align-items-center">
@@ -100,19 +101,19 @@ function CustomerList({ customers = [], onDeleteCustomer, loading }: CustomerLis
 
         {/* Search Input */}
         <div className="input-group w-50 d-flex justify-content-end">
+          
+          <div className="search-box">
           <span className="input-group-text">
             <i className="bi bi-search"></i>
           </span>
-          <div >
             <input
             type="text"
-            className="form-control w-80"
+            className="form-control"
             placeholder="Search customers..."
             value={searchTerm}
             key="search-input"
             onChange={(e) => {
               const value = e.target.value;
-              console.log('Search input changed:', value);
               setSearchTerm(value);
             }}
           />
@@ -232,6 +233,7 @@ function CustomerList({ customers = [], onDeleteCustomer, loading }: CustomerLis
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 }
